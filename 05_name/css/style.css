@@ -55,16 +55,38 @@ img {
 
 
 .media-container {
-    margin: 0 auto;
+    /* margin: 0 auto;
     max-width: 800px;
 
     display: grid;
-    grid-template-areas:
+    grid-template-areas:                   index2.html
         "title title title title"
         "image desc desc desc";
-    grid-gap: 1rem;
+    grid-gap: 1rem; */
+
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+
+    grid-template-areas:
+        "title"
+        "tagline"
+        "info"
+        "image"
+        "entry";
 }
 
+@media (min-width:480px) {
+    .media-container {
+        max-width: 800px;
+        margin: 0 auto;
+        grid-template-areas:
+            "title title"
+            "image tagline"
+            "image info"
+            "entry entry";
+    }
+}
 
 .site-title {
     grid-area: title;
@@ -78,8 +100,14 @@ img {
     grid-area: desc;
 }
 
-.tagline {}
+.tagline {
+    grid-area: tagline;
+}
 
-.info {}
+.info {
+    grid-area: info;
+}
 
-.entry {}
+.entry {
+    grid-area: entry;
+}
